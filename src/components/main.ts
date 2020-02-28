@@ -299,6 +299,7 @@ export class MainPage extends connect(store)(LitElement) {
 
         .image2{
           top: 100%;
+
         }
 
         h1{
@@ -405,7 +406,7 @@ export class MainPage extends connect(store)(LitElement) {
                 <a href="/">
                   <img src="images/manifest/home.png" width="45px" height="45px">
                 </a>
-                <div id="logOutButton" @click="${this._logOut}">
+                <div id="logOutButton" width="100px" @click="${this._logOut}">
                   Cerrar Sesión
                 </div>
                 <div id="box">
@@ -420,15 +421,9 @@ export class MainPage extends connect(store)(LitElement) {
                 </span>-->
                 <!--<span>
                   <a id="home" href="/"><img src="images/manifest/home.png" width="45px" height="45px"></a>
-<<<<<<< HEAD
                 </span>
                 <span id="box">
                   <a id="linkPerfil" class="image2" href="/MiPerfil"> <img src="images/manifest/perfil.png" width="100px" height="100px"></a>                  
-=======
-                </span>-->
-                <!--<span id="box">
-                  <a id="linkPerfil" href="/MiPerfil"> <img src="images/manifest/perfil.png" width="100px" height="100px"></a>                  
->>>>>>> 9d5bd10e69811da4963a97c8f700d3a650a679a6
                 </span>
                 <span id="search">
                     <input type="search" value="Ingrese su búsqueda" id="miBusqueda" name="q">
