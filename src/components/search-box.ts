@@ -67,7 +67,7 @@ export class SearchBox extends connect(store)(LitElement) {
             border-width: 5px;
           margin-top: 15px;
           color: #333;
-          font-family: 'Helvetica', sans-serif;
+          font-family: 'Helvetica', sans-serif, Arial;
             font-size: 26px;
             -webkit-appearance: none;
             -moz-appearance: none;
