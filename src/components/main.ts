@@ -73,12 +73,15 @@ export class MainPage extends connect(store)(LitElement) {
         }
 
         #main {
+          margin: 0px;
+          padding: 0px;
           display: grid;
           height: 100%;
-          width: 100%;
+          width: auto;
           grid-template-columns: 300px calc(100% - 300px);
           grid-template-rows: 80px calc(100% - 160px) 80px;
         }
+
 
         #header {
           background-color: #0d1e52;
@@ -111,6 +114,7 @@ export class MainPage extends connect(store)(LitElement) {
         }
         #home {
           float: left;
+          color: #FE9900;
         }
         
         #box {
@@ -127,13 +131,13 @@ export class MainPage extends connect(store)(LitElement) {
           width: 260px;
           color: black;
           border:#0D1E52 3px solid;
-          border-radius: 10px;
         }
         #menu {
           margin-top: 10px;
           margin-left: 10px;
           margin-right: 10px;
           margin-bottom: 10px;
+          overflow:hidden;
           width: 238px;
           height: 615px;
           background-color: #FE9900;
@@ -155,7 +159,7 @@ export class MainPage extends connect(store)(LitElement) {
         }
         
         #menu li a:hover{
-          background-color:antiquewhite;
+          background-color:#e48900;
           opacity: 0.7;
         }
         #menu li ul{
@@ -167,7 +171,7 @@ export class MainPage extends connect(store)(LitElement) {
         }
 
         #menu li[selected] > a {
-            background: red !important;
+            background: #e48900 !important;
         }
 
         #menu li[selected] > ul {
@@ -175,7 +179,7 @@ export class MainPage extends connect(store)(LitElement) {
         }
 
         #menu li > ul[selected] {
-            background: red !important;
+            background: e48900 !important;
         }
 
         #menu li ul li {
@@ -200,7 +204,7 @@ export class MainPage extends connect(store)(LitElement) {
         }
         
         
-      #content {
+        #content {
           grid-row: 2;
           grid-column: 2;
         }
@@ -290,6 +294,10 @@ export class MainPage extends connect(store)(LitElement) {
           width: 100vw;
           height: 100vh;
           object-fit: cover;
+        }
+
+        .image2{
+          top: 100%;
         }
 
         h1{
@@ -395,7 +403,7 @@ export class MainPage extends connect(store)(LitElement) {
                   <a id="home" href="/"><img src="images/manifest/home.png" width="45px" height="45px"></a>
                 </span>
                 <span id="box">
-                  <a id="linkPerfil" href="/MiPerfil"> <img src="images/manifest/perfil.png" width="100px" height="100px"></a>                  
+                  <a id="linkPerfil" class="image2" href="/MiPerfil"> <img src="images/manifest/perfil.png" width="100px" height="100px"></a>                  
                 </span>
                 <span id="search">
                     <input type="search" value="Ingrese su búsqueda" id="miBusqueda" name="q">
@@ -408,7 +416,6 @@ export class MainPage extends connect(store)(LitElement) {
                 </div>  -->
               </div>
 
-              <div id="nav-bar">
                     <nav id="menu">
                         <ul>
                           <hr/>
@@ -441,7 +448,6 @@ export class MainPage extends connect(store)(LitElement) {
                           <hr/>
                         </ul>
                     </nav>
-              </div>
 
               <div id="content">
                 <div id="debug">
