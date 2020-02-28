@@ -80,6 +80,7 @@ export class MainPage extends connect(store)(LitElement) {
           width: auto;
           grid-template-columns: 300px calc(100% - 300px);
           grid-template-rows: 80px calc(100% - 160px) 80px;
+          
         }
 
 
@@ -119,7 +120,7 @@ export class MainPage extends connect(store)(LitElement) {
           border-radius: 4px;
           position: absolute;
           background: coral;
-          left: 1400px;
+          left: 1550px;
           top: 14px;
           
         }
@@ -135,7 +136,7 @@ export class MainPage extends connect(store)(LitElement) {
         
         #box {
           position: absolute;
-          left: 1250px;
+          left: 1450px;
           top: 58px;
         }
         
