@@ -92,10 +92,17 @@ export class MainPage extends connect(store)(LitElement) {
           grid-column: 1/4 ;
           display: block;
         }
+        
         #titulo {
           grid-row: 1;
           grid-column: 1/2;
           margin-right: 300px;
+        }
+        #search {
+          position: absolute;
+          left: 500px;
+          top: 30px;
+          
         }
         #miBusqueda {
           height: 25px;
@@ -105,22 +112,31 @@ export class MainPage extends connect(store)(LitElement) {
           height: 25px;
           font-size: 14px;
         }
-        #search {
-          margin-left: 600px;
-          width: 300px;
-          height: 300px;
-          clear: left;
+
+        #logOutButton {
+          cursor: pointer;
+          border: 1px solid white;
+          border-radius: 4px;
+          position: absolute;
+          background: coral;
+          left: 1400px;
+          top: 14px;
           
         }
+
+        #logOutButton:hover {
+          background: orangered;
+        }
+        
         #home {
           float: left;
           color: #FE9900;
         }
         
         #box {
-          
-          margin-left: 1350px;
-          float: right;
+          position: absolute;
+          left: 1250px;
+          top: 58px;
         }
         
         #nav-bar {
@@ -229,21 +245,6 @@ export class MainPage extends connect(store)(LitElement) {
           color: #000;
         }
 
-        #logOutButton {
-          cursor: pointer;
-          border: 1px solid white;
-          border-radius: 4px;
-          padding: 3px;
-          background: coral;
-          grid-column: 1/1;
-          
-          float: right;
-          
-        }
-
-        #logOutButton:hover {
-          background: orangered;
-        }
         
         #footer {
         grid-column: 1 / 4;
@@ -386,6 +387,11 @@ export class MainPage extends connect(store)(LitElement) {
     }
   }
 
+  _mifuncion () 
+  {
+    console.log("de pana");
+  }
+
   /* Render se ejecuta cada vez que se modifica una variable marcada como property, OJO: no se verifican las
    * subpropiedades de los objetos, pueden requerir una actualización usando this.requestUpdate();
    * Más info: https://polymer-library.polymer-project.org/3.0/docs/devguide/observers */
@@ -396,19 +402,38 @@ export class MainPage extends connect(store)(LitElement) {
           <div id="main">
               <div id="header" style="vertical-align: middle;"> 
                 <!--<a href="/"> <img src="images/manifest/flecha.jpg" onclick="this._logOut" height="40px" width="40px" title="USM"></a>-->
-                <span id="logOutButton" @click="${this._logOut}">
+                <a href="/">
+                  <img src="images/manifest/home.png" width="45px" height="45px">
+                </a>
+                <div id="logOutButton" @click="${this._logOut}">
                   Cerrar Sesión
-                </span>
-                <span>
+                </div>
+                <div id="box">
+                  <a id="linkPerfil" href="/MiPerfil"> <img src="images/manifest/perfil.png" width="100px" height="100px"></a>                  
+                </div>
+                <div id="search">
+                    <input type="search" value="Ingrese su búsqueda" id="miBusqueda" name="q">
+                    <button id="botonBusqueda">Buscar</button>
+                </div>
+                <!--<span id="logOutButton" @click="${this._logOut}">
+                  Cerrar Sesión
+                </span>-->
+                <!--<span>
                   <a id="home" href="/"><img src="images/manifest/home.png" width="45px" height="45px"></a>
+<<<<<<< HEAD
                 </span>
                 <span id="box">
                   <a id="linkPerfil" class="image2" href="/MiPerfil"> <img src="images/manifest/perfil.png" width="100px" height="100px"></a>                  
+=======
+                </span>-->
+                <!--<span id="box">
+                  <a id="linkPerfil" href="/MiPerfil"> <img src="images/manifest/perfil.png" width="100px" height="100px"></a>                  
+>>>>>>> 9d5bd10e69811da4963a97c8f700d3a650a679a6
                 </span>
                 <span id="search">
                     <input type="search" value="Ingrese su búsqueda" id="miBusqueda" name="q">
                     <button id="botonBusqueda">Buscar</button>
-                </span>
+                </span>-->
 
                 <!-- Intente poner el cuadro de busqueda pero queda fuera de la seccion de header. -->
                 <!--<div id="box">
@@ -450,11 +475,11 @@ export class MainPage extends connect(store)(LitElement) {
                     </nav>
 
               <div id="content">
-                <div id="debug">
+                <!--<div id="debug">
                     <b>Page:</b> ${this._page},
                     <b>MainPage:</b> ${this._mainPage},
                     <b>Subpage:</b> ${this._subpage}
-                </div>
+                </div>-->
                   <!-- ACA está la utilización del componente, para pasarle datos usen un punto '.' más
                        el nombre de la variable del componente (public) 
                        
@@ -475,11 +500,11 @@ export class MainPage extends connect(store)(LitElement) {
                             pero algo más complejo lo pueden definir en el componente y luego @click="{this._myFunc}"
                             si myFunc no tiene argumentos. Si quieren mandar argumentos debe pasar por una lambda 
                             primero como @click="{() => {this._myFunc(args...) }}"   -->
-                            <div style="background: blue; font-size: 2em; width:${100*this._random}%"
+                            <!--<div style="background: blue; font-size: 2em; width:${100*this._random}%"
                                 @click="${() => {
                                     this._random = Math.random();
                                 }}"
-                            > CLICKME </div>
+                            > CLICKME </div>-->
                         ` 
                         : ''}
                   `: ''}
